@@ -1,0 +1,34 @@
+/*Light mode*/
+body, body.lightMode {
+  --background-default: navy;
+}
+
+/*High Contrast light mode*/
+@media (prefers-contrast: more) {
+  body:not(.darkMode) {
+    --background-default: black;
+  }
+}
+body.highContrastMode:not(.darkMode) {
+  --background-default: black;
+}
+
+/*Dark mode*/
+@media (prefers-color-scheme: dark) {
+  body:not(.lightMode) {
+    --background-default: antiquewhite;
+  }
+}
+body.darkMode {
+  --background-default: antiquewhite;
+}
+
+/*High Contrast dark mode*/
+@media (prefers-contrast: more) {
+  body.darkMode {
+    --background-default: white;
+  }
+}
+body.highContrastMode.darkMode {
+  --background-default: white;
+}
